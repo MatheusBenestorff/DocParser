@@ -4,14 +4,6 @@
 
 DocParser allows developers to transform unstructured text (from PDFs, Text files, Logs) into clean JSON objects without writing hardcoded parsing logic. Instead of writing complex `if/else` chains in your code, you simply define an **Extraction Profile** in JSON.
 
-## Concept
-
-The core philosophy is **Infrastructure as Code** applied to **Data Extraction**. 
-By decoupling the extraction rules from the core logic, DocParser enables:
-- **Portability:** Rules can be versioned and shared.
-- **Maintainability:** Support new document formats without recompiling the application.
-- **Scalability:** Stateless engine, ready for Cloud Native environments.
-
 ## How it Works
 
 1. **Input:** Raw text from a document (e.g., an Engineering Spec PDF or an Invoice).
