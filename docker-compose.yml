@@ -1,0 +1,8 @@
+services:
+  docparser:
+    build: .
+    image: docparser:latest
+    volumes:
+      - ./examples:/data
+    environment:
+      - INPUT_FOLDER=/data
