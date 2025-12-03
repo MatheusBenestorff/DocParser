@@ -5,11 +5,13 @@ using DocParser.Core;
 Console.WriteLine("========================================");
 Console.WriteLine("   DocParser CLI - Extraction Engine    ");
 Console.WriteLine("========================================");
+string rootFolder = Environment.GetEnvironmentVariable("INPUT_FOLDER") ?? "examples";
 
-string baseFolder = Environment.GetEnvironmentVariable("INPUT_FOLDER") ?? "examples";
+string inputsFolder = Path.Combine(rootFolder, "input");
+string outputsFolder = Path.Combine(rootFolder, "output");
 
-string profilePath = args.Length > 0 ? args[0] : Path.Combine(baseFolder, "profile.json");
-string inputPath = args.Length > 1 ? args[1] : Path.Combine(baseFolder, "input.pdf");
+string profilePath = args.Length > 0 ? args[0] : Path.Combine(inputsFolder, "profile.json");
+string inputPath = args.Length > 1 ? args[1] : Path.Combine(inputsFolder, "input.txt");
 
 // File Validation
 if (!File.Exists(profilePath))
@@ -56,11 +58,21 @@ try
     Console.WriteLine($"-> Starting extraction for '{profile.ProfileName}'");
     var resultJson = engine.Execute(documentContent, profile);
 
+    if (!Directory.Exists(outputsFolder))
+    {
+        Directory.CreateDirectory(outputsFolder);
+    }
+
+    string safeFileName = string.Join("_", profile.ProfileName.Split(Path.GetInvalidFileNameChars()));
+    string outputFilePath = Path.Combine(outputsFolder, $"{safeFileName}.json");
+
+    string finalContent = resultJson.ToJsonString(jsonOptions);
 
     // Final Result
+    File.WriteAllText(outputFilePath, finalContent);
+
     Console.WriteLine("----------------------------------------");
-    Console.WriteLine("EXTRACTION RESULT:");
-    Console.WriteLine(resultJson.ToJsonString(jsonOptions));
+    Console.WriteLine($"[SUCCESS] JSON Saved to: {outputFilePath}");
     Console.WriteLine("----------------------------------------");
 
 }
