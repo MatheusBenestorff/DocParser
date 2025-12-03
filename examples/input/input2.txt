@@ -1,10 +1,10 @@
 === ENGINEERING SPECIFICATION REPORT ===
-Date: 2025-12-01
-Project Number: 998877
+Date: 2025-12-03
+Project Number: 46545
 
 DESCRIPTION:
-We need to install a heavy crane model 100002 on the rear chassis.
-The truck is a Scania R450 8x4 with a wheelbase of 4500mm.
+We need to install a heavy crane model 45007 on the rear chassis.
+The truck is a Volvo FH 540 8x4 with a wheelbase of 4500mm.
 This project requires special stabilizers.
 
 TECHNICAL DATA:
