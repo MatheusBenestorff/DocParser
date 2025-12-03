@@ -1,0 +1,28 @@
+{
+  "profileName": "Demo_Project_Spec",
+  "rules": [
+    {
+      "targetField": "ProjectId",
+      "targetType": "Integer",
+      "method": "Regex",
+      "regexPattern": "Project Number:\\s*(\\d+)"
+    },
+    {
+      "targetField": "VehicleModel",
+      "method": "Regex",
+      "regexPattern": "truck is a\\s*(.*?)\\s*with"
+    },
+    {
+      "targetField": "DescriptionBlock",
+      "method": "TextRange",
+      "startAnchor": "DESCRIPTION:",
+      "endAnchor": "TECHNICAL DATA:",
+      "trimWhitespace": true
+    },
+    {
+      "targetField": "ManagerName",
+      "method": "Regex",
+      "regexPattern": "manager:\\s*(.*?)\\s*for approval"
+    }
+  ]
+}

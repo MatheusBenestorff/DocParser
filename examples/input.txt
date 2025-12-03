@@ -1,0 +1,18 @@
+=== ENGINEERING SPECIFICATION REPORT ===
+Date: 2025-12-01
+Project Number: 998877
+
+DESCRIPTION:
+We need to install a heavy crane model PK100002 on the rear chassis.
+The truck is a Scania R450 8x4 with a wheelbase of 4500mm.
+This project requires special stabilizers.
+
+TECHNICAL DATA:
+- Payload: 1500kg
+- Max Height: 32m
+- Winch Included: Yes
+
+NOTES:
+Please contact the project manager: Junior for approval.
+The budget for this adaptation is approved.
+=== END OF REPORT ===
