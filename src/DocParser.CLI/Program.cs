@@ -6,8 +6,10 @@ Console.WriteLine("========================================");
 Console.WriteLine("   DocParser CLI - Extraction Engine    ");
 Console.WriteLine("========================================");
 
-string profilePath = args.Length > 0 ? args[0] : Path.Combine("examples", "profile.json");
-string inputPath = args.Length > 1 ? args[1] : Path.Combine("examples", "input.txt");
+string baseFolder = Environment.GetEnvironmentVariable("INPUT_FOLDER") ?? "examples";
+
+string profilePath = args.Length > 0 ? args[0] : Path.Combine(baseFolder, "profile.json");
+string inputPath = args.Length > 1 ? args[1] : Path.Combine(baseFolder, "input.txt");
 
 // File Validation
 if (!File.Exists(profilePath))
