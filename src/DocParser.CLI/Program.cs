@@ -9,7 +9,7 @@ Console.WriteLine("========================================");
 string baseFolder = Environment.GetEnvironmentVariable("INPUT_FOLDER") ?? "examples";
 
 string profilePath = args.Length > 0 ? args[0] : Path.Combine(baseFolder, "profile.json");
-string inputPath = args.Length > 1 ? args[1] : Path.Combine(baseFolder, "input.txt");
+string inputPath = args.Length > 1 ? args[1] : Path.Combine(baseFolder, "input.pdf");
 
 // File Validation
 if (!File.Exists(profilePath))
@@ -32,7 +32,7 @@ try
 
     // Reading the Files
     string jsonProfileContent = File.ReadAllText(profilePath);
-    string documentContent = File.ReadAllText(inputPath);
+    string documentContent = DocumentReader.ReadContent(inputPath);
 
     // JSON configuration
     var jsonOptions = new JsonSerializerOptions
