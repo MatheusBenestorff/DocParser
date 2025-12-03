@@ -4,6 +4,14 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>DocParser.Core</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Matheus Benestorff</Authors>
+    <Company>Matheus Benestorff</Company>
+    <Description>A generic rule-based extraction engine for PDF and Text documents.</Description>
+    <PackageTags>pdf;extraction;regex;parser;automation</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
