@@ -25,7 +25,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore --configuration Release
 
-    # dotnet test
+    - name: Run Unit Tests
+      run: dotnet test --no-build --configuration Release --verbosity normal
 
     - name: Pack
       run: dotnet pack src/DocParser.Core/DocParser.Core.csproj --no-build --configuration Release --output ./nupkgs
